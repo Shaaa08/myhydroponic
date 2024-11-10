@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - MyHydroponic</title>
+  <style>
+    /* Global reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body styling */
+    body {
+      font-family: 'Arial', sans-serif;
+      color: #333;
+      background-color: #f9fafb;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    .header {
+      background-color: #00a651;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5em 2.5em;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .header h1 {
+      font-size: 2em;
+      font-weight: bold;
+      margin: 0;
+      letter-spacing: 0.05em;
+    }
+
+    .header nav {
+      display: flex;
+      gap: 2em;
+    }
+
+    .header nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1em;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .header nav a:hover {
+      color: #ddd;
+    }
+
+    /* About Section */
+    .about-section {
+      padding: 5em 2em;
+      background-color: white;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      margin: 2em auto;
+      max-width: 1200px;
+      border-radius: 10px;
+    }
+
+    .about-section h2 {
+      font-size: 2.8em;
+      font-weight: bold;
+      margin-bottom: 1em;
+      color: #00a651;
+      letter-spacing: 0.05em;
+    }
+
+    .about-section p {
+      font-size: 1.2em;
+      line-height: 1.8;
+      max-width: 900px;
+      margin: 0 auto 2em;
+      color: #666;
+    }
+
+    /* Video Container */
+    .video-container {
+      margin-top: 2em;
+      max-width: 100%;
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Features Section */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2 columns */
+      gap: 2em;
+      margin-top: 3em;
+    }
+
+    .feature {
+      background-color: #f4f9f7;
+      padding: 2em;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .feature h3 {
+      font-size: 1.8em;
+      color: #00a651;
+      margin-bottom: 1em;
+      font-weight: bold;
+    }
+
+    .feature p {
+      font-size: 1.1em;
+      color: #444;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #00a651;
+      color: white;
+      text-align: center;
+      padding: 1.5em 0;
+      font-size: 1.1em;
+      margin-top: auto;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .features {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+      }
+
+      .header h1 {
+        font-size: 1.6em;
+      }
+
+      .header nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .header nav a {
+        margin: 0.5em 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>MYHYDROPONIC</h1>
+    <nav>
+      <a href="HomePage.html">Home</a>
+      <a href="About.html">About</a>
+      <a href="Contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="about-section">
+    <h2>About MyHydroponic</h2>
+    <p>Welcome to MyHydroponic, your ultimate solution for growing plants using hydroponics! Our platform helps you learn how to manage and grow your hydroponic garden, offers useful resources on plant care, and even allows you to monitor the health of your plants using advanced image recognition.</p>
+    
+    <p>We are dedicated to making hydroponic gardening accessible and enjoyable for everyone, whether you're a beginner or an experienced gardener.</p>
+
+    <!-- YouTube Video Embed -->
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/your-video-id" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <div class="features">
+      <div class="feature">
+        <h3>Learn Hydroponics</h3>
+        <p>Discover the basics of hydroponics and how to set up your own system at home. Get step-by-step guidance on everything you need to get started.</p>
+      </div>
+      <div class="feature">
+        <h3>Plant Health Monitoring</h3>
+        <p>Use image recognition technology to check your plant's health and ensure they are thriving with minimal effort.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2024 MyHydroponic</p>
+  </footer>
+</body>
+</html>
