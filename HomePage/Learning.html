@@ -60,8 +60,8 @@
       color: #ddd;
     }
 
-    /* Hero Section */
-    .hero {
+    /* Learning Section */
+    .learning-section {
       flex: 1; /* Take up remaining space */
       position: relative;
       background-size: cover;
@@ -78,7 +78,7 @@
     }
 
     /* Overlay effect */
-    .hero::before {
+    .learning-section::before {
       content: "";
       position: absolute;
       top: 0;
@@ -89,39 +89,22 @@
       z-index: 1;
     }
 
-    .hero h3,
-    .hero h2,
-    .hero p,
-    .cta-buttons {
-      position: relative;
-      z-index: 2;
-      animation: fadeIn 1.5s ease-out;
-    }
-
-    .hero h3 {
-      font-size: 1.2em;
-      letter-spacing: 0.15em;
-      margin: 0;
-      font-weight: 300;
-      opacity: 0.9;
-    }
-
-    .hero h2 {
-      font-size: 4em;
-      font-weight: 800;
-      margin: 0.2em 0;
-      text-transform: uppercase;
+    .learning-section h2 {
+      font-size: 2.8em;
+      font-weight: bold;
+      margin-bottom: 1em;
+      color: #00a651;
       letter-spacing: 0.05em;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     }
 
-    .hero p {
-      font-size: 1.5em;
-      margin: 0.5em 0 1.5em;
-      font-weight: 300;
-      line-height: 1.4;
-      max-width: 600px;
+    .learning-section p {
+      font-size: 1.2em;
+      line-height: 1.8;
+      max-width: 900px;
+      margin: 0 auto 2em;
+      color: #666;
     }
+
 
     .cta-buttons {
       display: flex;
@@ -168,46 +151,17 @@
     <h1>MYHYDROPONIC</h1>
     <nav>
       <a href="HomePage.html">Home</a>
-      <a href="About.html">About</a>
-      <a href="Contact.html">Contact</a>
     </nav>
   </header>
 
-  <section class="hero" id="hero">
-    <h2>MYHYDROPONIC</h2>
-    <p>Your Plant's Personal Health Assistant</p>
-    <div class="cta-buttons">
-      <a href="Learning.html" class="cta-button">Learn Hydroponics</a>
-      <a href="#" class="cta-button">Check Plant Health </a>
-    </div>
+  <section class="learning-section">
+    <h2>Learn About Hydroponics</h2>
+    <p>Anything we do, we need to know everything first. Let's explore what is Hydroponics.</p>
+
   </section>
 
   <footer class="footer">
     <p>&copy; 2024 MyHydroponic</p>
   </footer>
-
-  <script>
-    // Array of background image URLs
-    const backgrounds = [
-      './img/img1.jpg',
-      './img/img2.jpg',
-      './img/img3.jpeg', // Add more image paths as needed
-    ];
-
-    let currentIndex = 0;
-
-    // Function to change background image
-    function changeBackground() {
-      const heroSection = document.getElementById('hero');
-      heroSection.style.backgroundImage = `url(${backgrounds[currentIndex]})`;
-      currentIndex = (currentIndex + 1) % backgrounds.length;
-    }
-
-    // Change background every 5 seconds
-    setInterval(changeBackground, 5000);
-
-    // Initial background change
-    changeBackground();
-  </script>
 </body>
 </html>
