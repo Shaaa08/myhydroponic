@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyHydroponic</title>
+  <style>
+    /* Reset default margins and paddings */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Set body height to fill the viewport */
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      font-family: 'Arial', sans-serif;
+      color: #333;
+      background-color: #f5f5f5;
+    }
+
+    /* Header */
+    .header {
+      background-color: #00a651;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em 2em;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .header h1 {
+      font-size: 1.8em;
+      font-weight: bold;
+      margin: 0;
+      letter-spacing: 0.05em;
+    }
+
+    .header nav {
+      display: flex;
+      gap: 2em;
+    }
+
+    .header nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1em;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .header nav a:hover {
+      color: #ddd;
+    }
+
+    /* Hero Section */
+    .hero {
+      flex: 1; /* Take up remaining space */
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 8em 2em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transition: background-image 1s ease-in-out;
+    }
+
+    /* Overlay effect */
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4); /* Lighter overlay */
+      z-index: 1;
+    }
+
+    .hero h3,
+    .hero h2,
+    .hero p,
+    .cta-buttons {
+      position: relative;
+      z-index: 2;
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    .hero h3 {
+      font-size: 1.2em;
+      letter-spacing: 0.15em;
+      margin: 0;
+      font-weight: 300;
+      opacity: 0.9;
+    }
+
+    .hero h2 {
+      font-size: 4em;
+      font-weight: 800;
+      margin: 0.2em 0;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero p {
+      font-size: 1.5em;
+      margin: 0.5em 0 1.5em;
+      font-weight: 300;
+      line-height: 1.4;
+      max-width: 600px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1em;
+    }
+
+    .cta-button {
+      padding: 1em 2.5em;
+      background: linear-gradient(135deg, #00a651, #009944);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-size: 1.1em;
+      font-weight: bold;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+
+    .cta-button:hover {
+      background: linear-gradient(135deg, #009944, #00a651);
+      transform: scale(1.05);
+      box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #00a651;
+      color: white;
+      text-align: center;
+      padding: 1em 0;
+      font-size: 1em;
+    }
+
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>MYHYDROPONIC</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="hero">
+    <h3>STARGIRLS</h3>
+    <h2>MYHYDROPONIC</h2>
+    <p>Your Plant's Personal Health Assistant</p>
+    <div class="cta-buttons">
+      <a href="#" class="cta-button">Learning Tools</a>
+      <a href="#" class="cta-button">Health Check </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2024 MyHydroponic</p>
+  </footer>
+
+  <script>
+    // Array of background image URLs
+    const backgrounds = [
+      './img/img1.jpg',
+      './img/img2.jpg',
+      './img/img3.jpeg', // Add more image paths as needed
+    ];
+
+    let currentIndex = 0;
+
+    // Function to change background image
+    function changeBackground() {
+      const heroSection = document.getElementById('hero');
+      heroSection.style.backgroundImage = `url(${backgrounds[currentIndex]})`;
+      currentIndex = (currentIndex + 1) % backgrounds.length;
+    }
+
+    // Change background every 5 seconds
+    setInterval(changeBackground, 5000);
+
+    // Initial background change
+    changeBackground();
+  </script>
+</body>
+</html>
