@@ -109,33 +109,86 @@
 
     /* Features Section */
     .features {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr); /* 2 columns */
-      gap: 2em;
-      margin-top: 3em;
+      background-color: transparent;
+      width: 400px;
+      height: 300px;
+      margin: 1.5em;
+      margin-top: 50px;
+      border: 1px solid #f1f1f1;
+      perspective: 1000px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
     }
 
-    .feature {
-      background-color: #f4f9f7;
-      padding: 2em;
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .feature  {
+      position: relative;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.6s ease;
+      transform-style: preserve-3d;
+      overflow: hidden;
+      margin-bottom: 50px;
     }
 
-    .feature:hover {
-      transform: translateY(-10px);
+    .features:hover .feature{
+      transform: rotateY(180deg);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     }
 
-    .feature h3 {
+    .front-flip h3 {
       font-size: 1.8em;
       color: #00a651;
       margin-bottom: 1em;
       font-weight: bold;
+      padding: 15px;
     }
 
-    .feature p {
+    .front-flip .back-flip {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+
+    .front-flip p {
+      font-size: 1.1em;
+      color: #444;
+    }
+
+    .front-flip {
+      background-color: antiquewhite;
+      color: #00a651;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transform: rotateY(0deg);
+      backface-visibility: hidden;
+    }
+     
+    .back-flip {
+      background-color: #00a651;
+      color: white;
+      transform: rotateY(180deg);
+      flex-direction: column;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .back-flip h3 {
+      font-size: 1.8em;
+      color: #00a651;
+      margin-bottom: 1em;
+      font-weight: bold;
+      padding: 15px;
+    }
+
+    .back-flip p {
       font-size: 1.1em;
       color: #444;
     }
@@ -194,12 +247,21 @@
 
     <div class="features">
       <div class="feature">
-        <h3>Learn Hydroponics</h3>
-        <p>Discover the basics of hydroponics and how to set up your own system at home. Get step-by-step guidance on everything you need to get started.</p>
+        <div class="front-flip">
+          <h3>Learn Hydroponics</h3>
+        </div>
+        <div class="back-flip">
+          <p>Discover the basics of hydroponics and how to set up your own system at home. Get step-by-step guidance on everything you need to get started.</p>
+        </div>
       </div>
+   
       <div class="feature">
-        <h3>Plant Health Monitoring</h3>
-        <p>Use image recognition technology to check your plant's health and ensure they are thriving with minimal effort.</p>
+        <div class="front-flip"></div>
+          <h3>Plant Health Monitoring</h3>
+        </div>
+        <div class="back-flip"></div>
+          <p>Use image recognition technology to check your plant's health and ensure they are thriving with minimal effort.</p>
+        </div>
       </div>
     </div>
   </section>

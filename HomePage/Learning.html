@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script src="script.js" defer></script>
   <title>MyHydroponic</title>
   <style>
     /* Reset default margins and paddings */
@@ -46,6 +47,7 @@
     .header nav {
       display: flex;
       gap: 2em;
+      margin-right: 40px;
     }
 
     .header nav a {
@@ -62,31 +64,13 @@
 
     /* Learning Section */
     .learning-section {
-      flex: 1; /* Take up remaining space */
-      position: relative;
-      background-size: cover;
-      background-position: center;
-      color: white;
+        padding: 5em 2em;
+      background-color: white;
       text-align: center;
-      padding: 8em 2em;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      transition: background-image 1s ease-in-out;
-    }
-
-    /* Overlay effect */
-    .learning-section::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.4); /* Lighter overlay */
-      z-index: 1;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      margin: 2em auto;
+      max-width: 1200px;
+      border-radius: 10px;
     }
 
     .learning-section h2 {
@@ -105,28 +89,40 @@
       color: #666;
     }
 
-
-    .cta-buttons {
-      display: flex;
-      gap: 1em;
+    [data-tab-content] {
+        display: none;
     }
 
-    .cta-button {
-      padding: 1em 2.5em;
-      background: linear-gradient(135deg, #00a651, #009944);
-      color: white;
-      text-decoration: none;
-      border-radius: 50px;
-      font-size: 1.1em;
-      font-weight: bold;
-      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-      transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    .active[data-tab-content] {
+        display: block;
     }
 
-    .cta-button:hover {
-      background: linear-gradient(135deg, #009944, #00a651);
-      transform: scale(1.05);
-      box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4);
+    .tabs {
+        display: flex;
+        justify-content: space-around;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;;
+    }
+
+    .tab {
+        cursor: pointer;
+        padding: 30px;
+        color: rgb(71, 150, 71);
+        font-family: Anton;
+        font-weight: bolder;
+        font-size: 1.4em;
+    }
+    .tab:hover {
+        background-color: #aaa;
+    }
+
+    .Tab-content h3 {
+        font-weight: bold;
+        margin-top: 1.2em;
+        margin-bottom: 1em;
+        color: #046432;
+        letter-spacing: 0.05em;
     }
 
     /* Animation */
@@ -156,8 +152,23 @@
 
   <section class="learning-section">
     <h2>Learn About Hydroponics</h2>
-    <p>Anything we do, we need to know everything first. Let's explore what is Hydroponics.</p>
+    <p>Anything we do, we need to learn something first. Let's explore Hydroponics.</p>
 
+    <ul class="tabs">
+        <li data-tab-target="#kit" class="tab">Hydroponic Kit</li>
+        <li data-tab-target="#step" class="tab">How to do Hydroponics</li>
+    </ul>
+
+    <div class="Tab-content">
+        <div id="kit" data-tab-content>
+            <h3>Hydroponic Kit</h3>
+            <p> This is </p>
+        </div>
+        <div id="step" data-tab-content>
+            <h3>Step by step to do Hydroponic</h3>
+            <p> This is </p>
+        </div>
+    </div>
   </section>
 
   <footer class="footer">
