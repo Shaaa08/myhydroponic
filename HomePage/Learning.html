@@ -64,7 +64,7 @@
 
     /* Learning Section */
     .learning-section {
-        padding: 5em 2em;
+      padding: 5em 2em;
       background-color: white;
       text-align: center;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -89,46 +89,65 @@
       color: #666;
     }
 
-    [data-tab-content] {
-        display: none;
+    /* Flip Card Styles */
+    .flip-card-container {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 2em;
     }
 
-    .active[data-tab-content] {
-        display: block;
+    .flip-card {
+      background-color: transparent;
+      width: 300px; /* Increased width for more content */
+      height: 300px; /* Increased height for more space */
+      perspective: 1000px;
     }
 
-    .tabs {
-        display: flex;
-        justify-content: space-around;
-        list-style-type: none;
-        margin: 0;
-        padding: 0;;
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
     }
 
-    .tab {
-        cursor: pointer;
-        padding: 30px;
-        color: rgb(71, 150, 71);
-        font-family: Anton;
-        font-weight: bolder;
-        font-size: 1.4em;
-    }
-    .tab:hover {
-        background-color: #aaa;
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
     }
 
-    .Tab-content h3 {
-        font-weight: bold;
-        margin-top: 1.2em;
-        margin-bottom: 1em;
-        color: #046432;
-        letter-spacing: 0.05em;
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden; /* Safari */
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
-    /* Animation */
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
+    .flip-card-front {
+      background-color: #046432;
+      color: white;
+      font-size: 1.4em;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .flip-card-back {
+      background-color: #f5f5f5;
+      color: #333;
+      transform: rotateY(180deg);
+      font-size: 1.2em;
+      padding: 15px;
+      overflow-y: auto; /* Allows scrolling if the content is too long */
     }
 
     /* Footer */
@@ -154,20 +173,29 @@
     <h2>Learn About Hydroponics</h2>
     <p>Anything we do, we need to learn something first. Let's explore Hydroponics.</p>
 
-    <ul class="tabs">
-        <li data-tab-target="#kit" class="tab">Hydroponic Kit</li>
-        <li data-tab-target="#step" class="tab">How to do Hydroponics</li>
-    </ul>
+    <!-- Flip Cards Section -->
+    <div class="flip-card-container">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            Hydroponic Kit
+          </div>
+          <div class="flip-card-back">
+            <p>A hydroponic kit includes essentials like growing containers, nutrient solution, air pumps, and grow lights. These kits are designed to help you set up your own hydroponic system at home or in a small-scale setup, ensuring that you have all the tools necessary to grow plants without soil.</p>
+          </div>
+        </div>
+      </div>
 
-    <div class="Tab-content">
-        <div id="kit" data-tab-content>
-            <h3>Hydroponic Kit</h3>
-            <p> This is </p>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            How to do Hydroponics
+          </div>
+          <div class="flip-card-back">
+            <p>Start by setting up your hydroponic system, adding plants, and monitoring nutrient levels and light exposure. You’ll need to choose an appropriate hydroponic method (e.g., deep water culture, wick system), mix the right nutrients, and ensure proper pH levels for optimal plant growth. Hydroponics is efficient and sustainable, providing fast growth with less water and space compared to traditional gardening methods.</p>
+          </div>
         </div>
-        <div id="step" data-tab-content>
-            <h3>Step by step to do Hydroponic</h3>
-            <p> This is </p>
-        </div>
+      </div>
     </div>
   </section>
 
