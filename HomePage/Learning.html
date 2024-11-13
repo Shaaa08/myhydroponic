@@ -125,6 +125,41 @@
         letter-spacing: 0.05em;
     }
 
+    .component-card {
+        background-color: #f9f9f9; /* Light background color */
+        border: 1px solid #ddd; /* Light border */
+        border-radius: 8px; /* Rounded corners */
+        padding: 20px; /* Inner padding */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        transition: transform 0.2s; /* Smooth hover effect */
+        max-width: 700px; /* Set a max width for the card */
+        margin: 40px auto; /* Center the card with margin */
+        text-align: left; /* Center text inside the card */
+    }
+
+    .component-card h3 {
+        color: #00a651; /* Green color for headings */
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .component-card p {
+        color: #444; /* Darker text for description */
+    }
+
+    .component-card:hover {
+        transform: scale(1.05); /* Slightly enlarge on hover */
+    }
+
+    /* Style for the message */
+    .message {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
     /* Animation */
     @keyframes fadeIn {
       0% { opacity: 0; transform: translateY(20px); }
@@ -158,32 +193,40 @@
         <li data-tab-target="#kit" class="tab">Hydroponic Kit</li>
         <li data-tab-target="#step" class="tab">How to do Hydroponics</li>
     </ul>
+    
+    <!-- Message that will be displayed -->
+    <div class="message">
+        <p>Please click any tabs</p>
+    </div>
 
     <div class="Tab-content">
         <div id="kit" data-tab-content>
             <h3>Hydroponic Kit</h3>
             <p>A hydroponic kit is a system designed to grow plants without soil, using nutrient-rich water to supply everything the plants need. This method allows for faster, more efficient growth and is ideal for indoor gardening. A typical hydroponic kit includes:</p>
         <ul>
-            <li><strong>Tray or Reservoir:</strong> Holds the nutrient solution for the plants.</li>
-            <li><strong>Net Pots:</strong> Containers to hold the plants in place.</li>
-            <li><strong>Water Pump and Air Pump:</strong> Keeps nutrients circulating and provides oxygen to the water.</li>
-            <li><strong>Grow Light:</strong> Provides light if there isn’t enough natural sunlight.</li>
-            <li><strong>Growing Medium:</strong> Materials like Rockwool or clay pebbles to support the plant roots.</li>
-            <li><strong>pH Testing Kit:</strong> Monitors the acidity of the water to keep it within a healthy range.</li>
+            <div class="component-card">
+                <br/>
+                <strong>Tray or Reservoir:</strong> Holds the nutrient solution for the plants. <br/><br/>
+                <strong>Net Pots:</strong> Containers to hold the plants in place.<br/><br/>
+                <strong>Water Pump and Air Pump:</strong> Keeps nutrients circulating and provides oxygen to the water.<br/><br/>
+                <strong>Grow Light:</strong> Provides light if there isn’t enough natural sunlight.<br/><br/>
+                <strong>Growing Medium:</strong> Materials like Rockwool or clay pebbles to support the plant roots.<br/><br/>
+                <strong>pH Testing Kit:</strong> Monitors the acidity of the water to keep it within a healthy range.<br/><br/>
+            </div>
         </ul>
         </div>
         <div id="step" data-tab-content>
             <h3>Step by step to do Hydroponic</h3>
             <p>Follow these steps to set up your hydroponic system:</p>
-        <ol>
-            <li><strong>Step 1:</strong> Gather all components, including the kit, water, nutrients, and growing medium.</li>
-            <li><strong>Step 2:</strong> Set up the tray and insert the net pots, filling them with the growing medium.</li>
-            <li><strong>Step 3:</strong> Mix the nutrient solution with water according to the instructions and adjust the pH to between 5.5 and 6.5.</li>
-            <li><strong>Step 4:</strong> Place seeds or seedlings into the net pots. Ensure they have enough room to grow.</li>
-            <li><strong>Step 5:</strong> Position the setup in a well-lit area or under a grow light.</li>
-            <li><strong>Step 6:</strong> Regularly check the water level, pH, and nutrient concentration, adjusting as necessary.</li>
-            <li><strong>Step 7:</strong> Monitor plant growth, prune as needed, and enjoy the process!</li>
-        </ol>
+            <div class="component-card">
+                <br/>
+                <strong>Step 1:</strong> Gather all components, including the kit, water, nutrients, and growing medium.<br/><br/>
+                <strong>Step 2:</strong> Set up the tray and insert the net pots, filling them with the growing medium.<br/><br/>
+                <strong>Step 3:</strong> Mix the nutrient solution with water according to the instructions and adjust the pH to between 5.5 and 6.5.<br/><br/>
+                <strong>Step 4:</strong> Place seeds or seedlings into the net pots. Ensure they have enough room to grow.<br/><br/>
+                <strong>Step 5:</strong> Position the setup in a well-lit area or under a grow light.<br/><br/>
+                <strong>Step 6:</strong> Regularly check the water level, pH, and nutrient concentration, adjusting as necessary.<br/><br/>
+            </div>
         </div>
     </div>
   </section>
