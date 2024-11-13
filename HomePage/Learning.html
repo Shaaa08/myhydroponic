@@ -64,7 +64,7 @@
 
     /* Learning Section */
     .learning-section {
-      padding: 5em 2em;
+        padding: 5em 2em;
       background-color: white;
       text-align: center;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -89,65 +89,46 @@
       color: #666;
     }
 
-    /* Flip Card Styles */
-    .flip-card-container {
-      display: flex;
-      justify-content: space-around;
-      margin-top: 2em;
+    [data-tab-content] {
+        display: none;
     }
 
-    .flip-card {
-      background-color: transparent;
-      width: 300px; /* Increased width for more content */
-      height: 300px; /* Increased height for more space */
-      perspective: 1000px;
+    .active[data-tab-content] {
+        display: block;
     }
 
-    .flip-card-inner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      transition: transform 0.6s;
-      transform-style: preserve-3d;
+    .tabs {
+        display: flex;
+        justify-content: space-around;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;;
     }
 
-    .flip-card:hover .flip-card-inner {
-      transform: rotateY(180deg);
+    .tab {
+        cursor: pointer;
+        padding: 30px;
+        color: rgb(71, 150, 71);
+        font-family: Anton;
+        font-weight: bolder;
+        font-size: 1.4em;
+    }
+    .tab:hover {
+        background-color: #aaa;
     }
 
-    .flip-card-front, .flip-card-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      -webkit-backface-visibility: hidden; /* Safari */
-      backface-visibility: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    .Tab-content h3 {
+        font-weight: bold;
+        margin-top: 1.2em;
+        margin-bottom: 1em;
+        color: #046432;
+        letter-spacing: 0.05em;
     }
 
-    .flip-card-front {
-      background-color: #046432;
-      color: white;
-      font-size: 1.4em;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .flip-card-back {
-      background-color: #f5f5f5;
-      color: #333;
-      transform: rotateY(180deg);
-      font-size: 1.2em;
-      padding: 15px;
-      overflow-y: auto; /* Allows scrolling if the content is too long */
+    /* Animation */
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
     /* Footer */
@@ -173,29 +154,37 @@
     <h2>Learn About Hydroponics</h2>
     <p>Anything we do, we need to learn something first. Let's explore Hydroponics.</p>
 
-    <!-- Flip Cards Section -->
-    <div class="flip-card-container">
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            Hydroponic Kit
-          </div>
-          <div class="flip-card-back">
-            <p>A hydroponic kit includes essentials like growing containers, nutrient solution, air pumps, and grow lights. These kits are designed to help you set up your own hydroponic system at home or in a small-scale setup, ensuring that you have all the tools necessary to grow plants without soil.</p>
-          </div>
-        </div>
-      </div>
+    <ul class="tabs">
+        <li data-tab-target="#kit" class="tab">Hydroponic Kit</li>
+        <li data-tab-target="#step" class="tab">How to do Hydroponics</li>
+    </ul>
 
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            How to do Hydroponics
-          </div>
-          <div class="flip-card-back">
-            <p>Start by setting up your hydroponic system, adding plants, and monitoring nutrient levels and light exposure. You’ll need to choose an appropriate hydroponic method (e.g., deep water culture, wick system), mix the right nutrients, and ensure proper pH levels for optimal plant growth. Hydroponics is efficient and sustainable, providing fast growth with less water and space compared to traditional gardening methods.</p>
-          </div>
+    <div class="Tab-content">
+        <div id="kit" data-tab-content>
+            <h3>Hydroponic Kit</h3>
+            <p>A hydroponic kit is a system designed to grow plants without soil, using nutrient-rich water to supply everything the plants need. This method allows for faster, more efficient growth and is ideal for indoor gardening. A typical hydroponic kit includes:</p>
+        <ul>
+            <li><strong>Tray or Reservoir:</strong> Holds the nutrient solution for the plants.</li>
+            <li><strong>Net Pots:</strong> Containers to hold the plants in place.</li>
+            <li><strong>Water Pump and Air Pump:</strong> Keeps nutrients circulating and provides oxygen to the water.</li>
+            <li><strong>Grow Light:</strong> Provides light if there isn’t enough natural sunlight.</li>
+            <li><strong>Growing Medium:</strong> Materials like Rockwool or clay pebbles to support the plant roots.</li>
+            <li><strong>pH Testing Kit:</strong> Monitors the acidity of the water to keep it within a healthy range.</li>
+        </ul>
         </div>
-      </div>
+        <div id="step" data-tab-content>
+            <h3>Step by step to do Hydroponic</h3>
+            <p>Follow these steps to set up your hydroponic system:</p>
+        <ol>
+            <li><strong>Step 1:</strong> Gather all components, including the kit, water, nutrients, and growing medium.</li>
+            <li><strong>Step 2:</strong> Set up the tray and insert the net pots, filling them with the growing medium.</li>
+            <li><strong>Step 3:</strong> Mix the nutrient solution with water according to the instructions and adjust the pH to between 5.5 and 6.5.</li>
+            <li><strong>Step 4:</strong> Place seeds or seedlings into the net pots. Ensure they have enough room to grow.</li>
+            <li><strong>Step 5:</strong> Position the setup in a well-lit area or under a grow light.</li>
+            <li><strong>Step 6:</strong> Regularly check the water level, pH, and nutrient concentration, adjusting as necessary.</li>
+            <li><strong>Step 7:</strong> Monitor plant growth, prune as needed, and enjoy the process!</li>
+        </ol>
+        </div>
     </div>
   </section>
 
